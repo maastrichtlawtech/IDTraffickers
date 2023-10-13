@@ -55,4 +55,4 @@ Based on the style representations from the trained classifier, we also establis
   <img src="https://github.com/vageeshSaxena/IDTraffickers-EMNLP2023/blob/main/Images/Screenshot%20from%202023-10-12%2022-19-43.png" width="800" height="500">
 </p>
 
-To conduct the retrieval task, we first [extract the trained representations](https://github.com/vageeshSaxena/IDTraffickers/blob/main/analysis/extract_embeddings.ipynb) and then [retrieve similar advertisements using the FAISS framework](https://github.com/vageeshSaxena/IDTraffickers/blob/main/analysis/faiss.ipynb).
+To conduct the retrieval task, we first [extract the trained representations](https://github.com/vageeshSaxena/IDTraffickers-EMNLP2023/blob/main/analysis/extract_embeddings.ipynb) and then [retrieve similar advertisements using the FAISS framework](https://github.com/vageeshSaxena/IDTraffickers-EMNLP2023/blob/main/analysis/faiss.ipynb).
