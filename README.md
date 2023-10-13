@@ -13,10 +13,14 @@ The dataset utilized in the experiments comprises text sequences created by comb
 </p>
 
 # Setup
-This repository is tested on Python 3.8+. First, you should install a virtual environment:
+This repository is tested on Python 3.8+ and [conda](https://docs.conda.io/projects/miniconda/en/latest/). First, you should install a virtual environment:
 ```
-python3 -m venv .venv/HT
-source .venv/HT/bin/activate
+conda create -n ID python=3.9
+```
+
+To activate the conda environment, run:
+```
+conda activate ID
 ```
 
 Then, you can install all dependencies:
@@ -24,5 +28,19 @@ Then, you can install all dependencies:
 pip install -r requirements.txt
 ```
 
+Additionally, to perform the authorship verification task, please install the FAISS package as suggested [here](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md)
+
+
 # Experiments
 ### Authorship Identification: A classification task
+This research establishes a benchmark by performing the vendor identification task using various classifiers built over transformers-based contextualized embeddings. As shown below, the classifier performs the best when initialized with the representations from the DeCLUTR-small architecture. 
+<p align="center">
+  <img src="https://github.com/vageeshSaxena/IDTraffickers/blob/main/Images/Screenshot%20from%202023-10-12%2022-19-17.png" width="450" height="500">
+</p>
+
+To train the classifier, run:
+```
+python train/classifier.py --batch_size 32 --demography merged --model_name_or_path johngiorgi/declutr-small --tokenizer_name_or_path johngiorgi/declutr-small --seed 1111 --logged_entry_name declutr-small-seed:5000-bs:32  --learning_rate 0.0001
+```
+
+
