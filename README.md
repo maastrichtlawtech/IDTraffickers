@@ -33,9 +33,14 @@ Additionally, to perform the authorship verification task, please install the FA
 
 # Experiments
 ### Authorship Identification: A classification task
-This research establishes a benchmark by performing the vendor identification task using various classifiers built over transformers-based contextualized embeddings. As shown below, the classifier performs the best when initialized with the representations from the DeCLUTR-small architecture. 
+This research establishes a benchmark by performing the vendor identification task using various classifiers built over transformers-based contextualized embeddings. Given a specific text, the objective of the classifier is to predict the vendor that posted the advertisement. As shown below, the classifier performs the best when initialized with the representations from the DeCLUTR-small architecture. 
 <p align="center">
   <img src="https://github.com/vageeshSaxena/IDTraffickers/blob/main/Images/Screenshot%20from%202023-10-12%2022-19-17.png" width="450" height="500">
+</p>
+
+The training details of all the trained classifiers can be found below:
+<p align="center">
+  <img src="https://github.com/vageeshSaxena/IDTraffickers/blob/main/Images/Screenshot%20from%202023-10-12%2022-20-22.png" width="800" height="500">
 </p>
 
 To train the classifier, run:
@@ -43,4 +48,11 @@ To train the classifier, run:
 python train/classifier.py --batch_size 32 --demography merged --model_name_or_path johngiorgi/declutr-small --tokenizer_name_or_path johngiorgi/declutr-small --seed 1111 --logged_entry_name declutr-small-seed:5000-bs:32  --learning_rate 0.0001
 ```
 
+### Authorship Verification: A retrieval task
+Based on the style representations from the trained classifier, we also establish an authorship verification benchmark through an open-setting text-similarity-based ranking task, where we compute the cosine similarity between the style representations to analyze the patterns in writing style and determine if they came from the same vendor. 
 
+<p align="center">
+  <img src="https://github.com/vageeshSaxena/IDTraffickers/blob/main/Images/Screenshot%20from%202023-10-12%2022-19-43.png" width="800" height="500">
+</p>
+
+To conduct the retrieval task, we first [extract the trained representations](https://github.com/vageeshSaxena/IDTraffickers/blob/main/analysis/extract_embeddings.ipynb) and then [retrieve similar advertisements using the FAISS framework](https://github.com/vageeshSaxena/IDTraffickers/blob/main/analysis/faiss.ipynb).
