@@ -4,7 +4,7 @@ Human trafficking (HT) is a pervasive global issue affecting vulnerable individu
 
 ![](https://github.com/vageeshSaxena/IDTraffickers-EMNLP2023/blob/main/Images/Screenshot%20from%202023-10-12%2022-18-06.png)
 
-# IDTraffickers Dataset (Access through [DataverseNL Portal](https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/NZ7VLC))
+# IDTraffickers Dataset (Access through [DataverseNL Portal](https://doi.org/10.34894/NZ7VLC))
 
 The dataset utilized in the experiments comprises text sequences created by combining the titles and descriptions of Backpage escort markets collected from 41 states from December 2015 to April 2016. The experiments are performed by establishing the ground truth with individual advertisements, achieved through the connection of phone numbers present in the advertisements. 
 
